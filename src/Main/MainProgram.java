@@ -1,14 +1,18 @@
 package Main;
 
 import Calculator.Calculator;
+import Views.ConsoleView;
 
 public class MainProgram {
 
 	public static void main(String[] args) {
+		ConsoleView cv = new ConsoleView();
+		String equation = cv.displayRequest();
+		
 		Calculator calculator = new Calculator();
-		//System.out.println(calculator.evaluate("5+6"));
-		System.out.println(calculator.evaluate("6-1*0+2/2"));
 
+		double answer = calculator.evaluate(equation);
+		cv.displayResults(answer);
 	}
 
 }
